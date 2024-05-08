@@ -1,3 +1,13 @@
+<script>
+    import viewer from "../components/Viewer.vue"
+
+    export default {
+        components: {
+           viewer
+        }
+    }
+</script>
+
 <template>
     <div id = "body">
         <div class = "header">Header</div>
@@ -5,14 +15,10 @@
             <!-- flex布局details and picture -->
             <el-row>
                 <el-col :xs="24" :sm="24" :md="14" :lg="14" :xl="14" class="pink-col">
-                    <div class="grid-content ep-bg-purple" />
+                        <viewer></viewer>
                 </el-col>
                 <el-col :xs="24" :sm="24" :md="10" :lg="10" :xl="10" class="details-container">
                     <div class="navigator"></div>
-
-                    <!-- <el-card style="max-width: 480px" shadow="never">
-                        <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
-                    </el-card> -->
 
                     <div class="mb-5 md:mb-0 flex-col flex">
                         <!-- 文物名 -->
