@@ -11,7 +11,8 @@
                 type: "image",
                 // crossOriginPolicy: 'Anonymous',
                 // ajaxWithCredentials: false,
-                url: "https://www.sxhm.com/Uploads/Picture/2021/11/11/s618c7eba48d28.png"
+                // url: "https://www.sxhm.com/Uploads/Picture/2021/11/11/s618c7eba48d28.png"
+                url: "https://gips3.baidu.com/it/u=113178756,797997158&fm=3039&app=3039&f=JPEG?w=1024&h=1024"
             }
         });
     }
@@ -19,7 +20,5 @@
 </script>
 
 <template>
-    <div>
-        <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
-    </div>
+    <div id="openseadragon1" :style="{backgroundColor:'rgb(240, 240, 240)', width: '100%', height: 'calc(-12.5rem + 100dvh)', position: 'relative'}"></div>
 </template>

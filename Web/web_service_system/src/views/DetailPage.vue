@@ -10,14 +10,29 @@
 
 <template>
     <div id = "body">
-        <div class = "header">Header</div>
+        <div class = "header md:z-[9996] md:sticky md:top-0">
+            <div class="custom-h3">header</div>
+        </div>
         <div id = "main">
             <!-- flex布局details and picture -->
-            <el-row>
-                <el-col :xs="24" :sm="24" :md="14" :lg="14" :xl="14" class="pink-col">
-                        <viewer></viewer>
-                </el-col>
-                <el-col :xs="24" :sm="24" :md="10" :lg="10" :xl="10" class="details-container">
+            <div class="flex flex-col md:flex-row md:sticky md:top-0 md:items-start">
+                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-20">
+                        <div class="relative">
+                            <viewer></viewer>
+                        </div>
+                        <div class="controller-wrapper px-4 py-6 md:p-6 flex justify-between flex-col md:flex-row gap-4">
+                            <div class="flex flex-row items-center gap-2 order-2 md:gap-4 md:order-1">
+                                <div class="flex justify-between sm:justify-start w-full sm:w-auto gap-2 md:gap-4 sm:w-full md:w-full">
+                                    <button class="button">放大</button>
+                                    <button class="button">缩小</button>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 md:gap-4 order-1 md:order-2">
+                                <button class="button">展开</button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0">
                     <div class="navigator"></div>
 
                     <div class="mb-5 md:mb-0 flex-col flex">
@@ -67,8 +82,8 @@
                             </p>
                         </div>
                     </div>
-                </el-col>
-            </el-row>
+                </div>
+            </div>
             <!-- grid布局，猜你喜欢 -->
             <div></div>
         </div>
@@ -85,18 +100,33 @@ html body {
 .header {
     height: 89px;
     width: 100%;
+    background-color: burlywood;
 }
-.el-row {
-    margin-bottom: 5px;
-}
-
-/* .el-col {
-    border-radius: 4px;
-} */
 
 .grid-content {
     border-radius: 4px;
     min-height: 36px;
+}
+
+.controller-wrapper {
+    opacity: 1;
+    height: auto;
+    padding: auto;
+    background-color: rgb(220, 220, 220);
+}
+
+.button {
+    justify-items: center;
+    border-width: 3px;
+    border-color: black;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.button:hover {
+    border-color: #b64619d2;
+    background-color: #b64619d2;
+    color: white;
 }
 
 .pink-col {
