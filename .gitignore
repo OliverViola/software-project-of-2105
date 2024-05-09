@@ -3,5 +3,6 @@
 Sever/web_service_system/static/
 /media
 *.log
+/.idea
 
 
