@@ -51,6 +51,12 @@ const routes = [
     component: () => import("@/views/RegisterView.vue"),
     meta: { title: 'Register Page' } // 设置页面标题
   },
+  {
+    path: '/details',
+    name: 'DetailsPage',
+    component: () => import("@/views/DetailPage.vue"),
+    meta: { title: 'Details Page' }
+  },
 ]
 
 const router = createRouter({

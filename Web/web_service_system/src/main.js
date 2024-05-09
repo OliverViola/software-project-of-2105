@@ -5,6 +5,8 @@ import store from './store';
 import ElementPlus from 'element-plus'; // 注意这里导入的是 Element Plus 而不是 Element UI
 import 'element-plus/dist/index.css'
 import axios from 'axios'; // 导入axios
+import './tailwindcss/tailwind.css'
+
 // 创建 Vue 应用
 const app = createApp(App);
 
