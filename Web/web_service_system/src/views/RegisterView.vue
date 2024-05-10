@@ -102,6 +102,7 @@ export default {
             confirm: this.form.confirm
           })
               .then(response => {
+                console.log(response);
                 if (response.status === 201) {
                   // 注册成功
                   this.$message({
