@@ -1,40 +1,31 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Layout from "../layout/Layout.vue";
 const routes = [
   {
-    path: '/',
-    name: 'Layout',
-    component: Layout,
-    redirect: "/firstPage",
-    children: [
-      {
-        path: 'home',
-        name: 'Home',
-        component: () => import("@/views/Home"),
-        meta: { title: 'Home' }
-      },
-      {
-        path: 'search',
-        name: 'Search',
-        component: () => import("@/views/Search"),
-        meta: { title: 'Search' }
-      },
-      {
-        path: 'timeline',
-        name: 'TimeLine',
-        component: () => import("@/views/TimeLine"),
-        meta: { title: 'TimeLine' }
-      },
-      {
-        path: 'knowledgeMap',
-        name: 'KnowledgeMap',
-        component: () => import("@/views/KnowledgeMap"),
-        meta: { title: 'KnowledgeMap' }
-      }
-    ]
+    path: '/home',
+    name: 'Home',
+    component: () => import("@/views/Home"),
+    meta: { title: 'Home' }
   },
   {
-    path: '/firstPage',
+    path: '/search',
+    name: 'Search',
+    component: () => import("@/views/Search"),
+    meta: { title: 'Search' }
+  },
+  {
+    path: '/timeline',
+    name: 'TimeLine',
+    component: () => import("@/views/TimeLine"),
+    meta: { title: 'TimeLine' }
+  },
+  {
+    path: '/knowledgeMap',
+    name: 'KnowledgeMap',
+    component: () => import("@/views/KnowledgeMap"),
+    meta: { title: 'KnowledgeMap' }
+  },
+  {
+    path: '/',
     name: 'FirstPage',
     component: () => import("@/views/FirstPage"),
     meta: { title: 'FirstPage' }

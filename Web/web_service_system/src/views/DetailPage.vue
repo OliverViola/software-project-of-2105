@@ -1,8 +1,9 @@
 <script>
     import viewer from "../components/Viewer.vue"
-
+    import Header from "../components/Header.vue"
     export default {
         components: {
+          Header,
            viewer
         }
     }
@@ -10,7 +11,7 @@
 
 <template>
     <div id = "body">
-        <div class = "header">Header</div>
+      <Header></Header>
         <div id = "main">
             <!-- flex布局details and picture -->
             <el-row>

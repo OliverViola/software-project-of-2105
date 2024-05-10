@@ -1,24 +1,29 @@
 <template>
   <div style="
     display: flex;
-    background-color: #24292f;
+    background-color: white;
     font-family: Arial, sans-serif;
-    height: 6vh
+    height: 70px
     ">
-    <div style="padding-top: 0px; padding-left: 15px">
-      <el-button link style="font-weight: bold; font-size: 35px; color: white;">
-        海外文物知识系统
-      </el-button>
+    <div style="padding-top: 15px;margin-left: 1%">
+      <el-icon style="font-size: 40px"><Management /></el-icon>
     </div>
-    <div style="padding-top: 10px; padding-left: 15px; margin-left: 70%">
-      <el-button @click="login" link style="font-weight: bold; font-size: 20px; color: white;" >
-       登录注册
+    <div style="padding-top: 10px;margin-left: 0.2%">
+      <el-text style="font-weight: 550; font-size: 35px; color: black;">
+        海外文物知识系统
+      </el-text>
+    </div>
+    <div style="padding-top: 20px; margin-left: 72%">
+      <el-button @click="login" link style="font-weight: 500; font-size: 20px; color: black; " >
+        登录注册
       </el-button>
     </div>
     <div style="flex: 1" />
 
   </div>
-  <el-card class="box-card">
+  <el-card class="box-card"
+
+  >
 
     <el-carousel :interval="4000" type="card" height="600px">
 
@@ -35,9 +40,12 @@
 // import {getCookie} from "@/utils/cookie";
 // import request from "@/utils/request";
 
+import {Management} from "@element-plus/icons-vue";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "home",
+  components: {Management},
   data(){
     return{
       image:[

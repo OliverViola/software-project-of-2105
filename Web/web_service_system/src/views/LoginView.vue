@@ -1,52 +1,58 @@
 <template>
-  <div style="font-family: Arial, sans-serif; text-align: center">
-    <div style="width: 100%; height: 94vh; overflow: hidden; background-color: aliceblue">
-      <div style="width: 400px; margin: 150px auto;">
-        <el-card>
-          <div style="color: black; font-size: 25px; padding-bottom: 30px">
-            欢迎使用海外文物知识系统
-          </div>
-          <el-form ref="form" :model="form" :rules="rules">
-            <el-form-item prop="username">
-              <el-input
-                  prefix-icon="User"
-                  v-model="form.username"
-                  placeholder="请输入用户名"
-              />
-            </el-form-item>
-            <el-form-item prop="password">
-              <el-input
-                  prefix-icon="Lock"
-                  v-model="form.password"
-                  type="password"
-                  autocomplete="off"
-                  show-password
-                  placeholder="请输入密码"
-              />
-            </el-form-item>
-            <div style="text-align: center">
-              <el-button type="primary" @click="login" style="width: 100%">登录</el-button>
-            </div>
-            <p class="tips">
-              <router-link to="/Register">还没有账号？立即注册</router-link>
 
-            </p>
-
-          </el-form>
-        </el-card>
-      </div>
+  <div class="backpicture">
+<!--  <div style="font-family: Arial, sans-serif; text-align: center">-->
+<!--    <div style="width: 100%; height: 94vh; overflow: hidden;">-->
+<!--      <div style="width: 400px; margin: 150px auto;">-->
+    <div class="site">
+      <h1 style="position: absolute; top: 5%; left: 3%;color: #d3dce6;font-size: 50px;">欢迎进入海外文物知识系统</h1>
     </div>
+    <el-card class="custom-card">
+      <div style="color: black; font-size: 30px; padding-bottom: 30px;text-align: center;">
+        欢迎登录
+      </div>
+      <el-form ref="form" :model="form" :rules="rules">
+        <el-form-item prop="username">
+          <div class="container">
+            <el-icon><User /></el-icon>
+            <el-input class="input" v-model="form.username" placeholder="请输入用户名" />
+          </div>
+        </el-form-item>
+        <el-form-item prop="password">
+          <div class="container">
+          <el-icon><Lock /></el-icon>
+          <el-input
+              v-model="form.password"
+              type="password"
+              autocomplete="off"
+              show-password
+              placeholder="请输入密码"
+          />
+          </div>
+        </el-form-item>
+        <div style="text-align: center">
+          <el-button type="primary" @click="login" style="width: 100%">登录</el-button>
+        </div><br>
+        <p class="tips">
+          <router-link to="/Register">还没有账号？立即注册</router-link>
+        </p>
+      </el-form>
+    </el-card>
+
   </div>
+<!--    </div>-->
+<!--  </div>-->
+<!--  </div>-->
 </template>
 
 <script>
-// import request from "@/utils/request";
-// import { getCookie, deleteCookie } from "@/utils/cookie";
 
 import RegisterView from "@/views/RegisterView.vue";
 import {ElMessage, ElMessageBox} from "element-plus";
-
+import {Lock, User} from "@element-plus/icons-vue";
 export default {
+  // eslint-disable-next-line vue/no-unused-components
+  components: {Lock, User},
 
     // 在组件被挂载之前
     beforeRouteEnter(to, from, next) {
@@ -54,7 +60,6 @@ export default {
       document.title = to.meta.title
       next()
     },
-
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Login",
   computed: {
@@ -78,11 +83,6 @@ export default {
       loading: false
     }
   },
-  // created() {
-  //   if(getCookie("user")) {
-  //     deleteCookie("user")
-  //   }
-  // },
 
   methods: {
     login() {
@@ -124,5 +124,38 @@ export default {
 <style>
 .font {
   font-family: Arial, sans-serif;
+}
+.backpicture{
+  background-image: url('../assets/image/img.png');
+  background-size: cover; /* 调整背景图片大小以覆盖整个元素 */
+  background-position: center; /* 将背景图片放置在元素中心 */
+  height: 100vh; /* 设置元素高度为视窗高度 */
+  display: flex;
+  justify-content: center; /* 在水平方向上居中内容 */
+  align-items: center; /* 在垂直方向上居中内容 */
+  font-family: Arial, sans-serif;
+
+
+}
+
+.custom-card {
+  position: fixed; /* 固定位置 */
+  top: 28%; /* 距离顶部距离 */
+  right: 35%; /* 距离右侧距离 */
+  width: 30%; /* 卡片宽度 */
+  height: 43%; /* 卡片高度 */
+  background-color: rgba(255, 255, 255, 0.86); /* 设置背景颜色及透明度 */
+  z-index: 9999; /* 设置z-index值，保证在最顶层 */
+  overflow: auto; /* 设置溢出时滚动 */
+  box-shadow: 10px 10px 11px rgba(255, 255, 255, 0.6); /* 添加白色阴影效果 */
+  border-radius: 10px
+}
+.container {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+}
+
+.icon {
+  margin-right: 10px; /* 设置图标与输入框之间的间距 */
 }
 </style>
