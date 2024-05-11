@@ -19,6 +19,6 @@ class Artifact(models.Model):
     imageUrl = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'artifacts'
+        db_table = 'artifacts2'
         managed = False
 

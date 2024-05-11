@@ -10,18 +10,8 @@ import random
 def getRandomArtifact(request):
     try:
         number = request.data.get("number")
-        artifacts = []
-        length = Artifact.objects.count()
-        # get random and unrepeatable id numbers
-        sequence = []
-        while len(sequence) < number:
-            num = random.randint(1, length)
-            if num not in sequence:
-                sequence.append(num)
-
-        for i in sequence:
-            artifact = Artifact.objects.filter(id=i).values()[0]
-            artifacts.append(artifact)
-        return Response(artifacts, status=status.HTTP_200_OK)
+        artifacts = Artifact.objects.order_by("?")[:number].values()
+        return Response(list(artifacts), status=status.HTTP_200_OK)
     except Exception as e:
-        return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
+
