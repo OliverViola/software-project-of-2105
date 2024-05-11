@@ -15,24 +15,30 @@ export default {
 </script>
 
 <template>
-  <div class="shadow-right-bottom flex flex-col p-4" :style="{height: '360px'}" @click="goToDetailPage">
+  <div class="card-wrapper shadow-right-bottom flex flex-col p-4" :style="{height: '360px'}" @click="goToDetailPage">
     <img :src="picUrl" :style="{height: '200px'}">
     <div class="mt-2 flex flex-col gap-3">
-      <p class="title-text">{{artworkTitle}}</p>
+      <p class="title-text pb-1 border-b-[1px] border-zinc-500">{{artworkTitle}}</p>
       <p class="text">{{artworkMaterial}}</p>
     </div>
   </div>
 </template>
 
 <style scoped>
+.card-wrapper:hover {
+  cursor: pointer; /* 鼠标悬停时鼠标样式变为可点击样式 */
+  transform: scale(1.025); /* 卡片有一个放大效果 */
+}
+
 .shadow-right-bottom {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* 只在右下方显示阴影 */
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* 只在右下方显示阴影 */
+  transition: transform 0.3s ease; /* 添加过渡效果 */
 }
 
 .title-text {
   font-size: 20px;
   font-weight: 500;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .text {

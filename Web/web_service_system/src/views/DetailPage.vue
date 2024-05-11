@@ -56,7 +56,7 @@
         <div id = "main" class="flex flex-col relative pb-4">
             <!-- flex布局details and picture -->
             <div class="flex flex-col md:flex-row md:items-start">
-                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-[89px]">
+                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-[70px]">
                         <viewer></viewer>
                     </div>
                 <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0">
@@ -136,7 +136,7 @@
                 </div>
                 <div id="see-also-container" class="basis-5/6">
                     <h3 class="custom-h3 border-b-2 border-black py-4">相似推荐</h3>
-                    <div id="card-container" class="mt-4 grid gap-x-4 gap-y-8 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+                    <div id="card-container" class="mt-4 grid gap-x-4 gap-y-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
                          <card v-for="(item, index) in relatedArtworks" :key="index" :picUrl="item.imageUrl" :artworkTitle="item.name" :artworkMaterial="item.material" :id="item.id"></card>
                     </div>
                 </div>
@@ -158,7 +158,7 @@ html body {
 }
 
 .header {
-    height: 89px;
+    height: 70px;
     width: 100%;
     background: white;
 }
@@ -173,24 +173,6 @@ html body {
     height: auto;
     padding: auto;
     background-color: rgb(220, 220, 220);
-}
-
-.button {
-    justify-items: center;
-    border-width: 2px;
-    border-color: black;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-.button:hover {
-    border-color: #b64619d2;
-    background-color: #b64619d2;
-    color: white;
-}
-
-.pink-col {
-    background-color: rgb(240, 240, 240);
 }
 
 .details-container {
