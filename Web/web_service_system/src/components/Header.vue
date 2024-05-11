@@ -51,17 +51,15 @@ export default {
       login: false
     };
   },
-  // created() {
-  //   if(getCookie("user")) {
-  //     this.user = JSON.parse(getCookie("user"))
-  //     this.login = true
-  //   } else {
-  //     this.login = false
-  //   }
-  // },
   methods: {
     update() {
-      this.$router.push("/")
+      this.clearUserSession();
+      this.$router.replace("/")
+    },
+    clearUserSession() {
+      // 清除登录相关信息，例如 Token
+      localStorage.removeItem("authToken");
+      this.$store.commit("setUser", null); // 重置 Vuex 状态
     },
     toHome(){
       this.$router.push("/home")

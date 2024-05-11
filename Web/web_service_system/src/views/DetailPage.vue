@@ -5,7 +5,7 @@
         components: {
           Header,
            viewer
-        }
+        },
     }
 </script>
 

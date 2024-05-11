@@ -19,21 +19,15 @@
       </el-button>
     </div>
     <div style="flex: 1" />
-
   </div>
-  <el-card class="box-card"
-
-  >
-
-    <el-carousel :interval="4000" type="card" height="600px">
-
-      <el-carousel-item v-for="(item,index) in image" :key="index">
-
-        <img :src="item" class="home"/>
-      </el-carousel-item>
-
-    </el-carousel>
-  </el-card>
+    <el-card class="box-card">
+      <el-carousel :interval="4000" type="card" height="500px">
+        <el-carousel-item v-for="(item,index) in artifactImg" :key="index">
+          <img :src="item.imageUrl" class="home" alt=""/>
+        </el-carousel-item>
+      </el-carousel>
+    </el-card>
+  <h1>登录之后查看更多文物和详细信息</h1>
 </template>
 
 <script>
@@ -41,6 +35,7 @@
 // import request from "@/utils/request";
 
 import {Management} from "@element-plus/icons-vue";
+import axios from "axios";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -48,27 +43,55 @@ export default {
   components: {Management},
   data(){
     return{
-      image:[
-        require("../assets/image/3.png"),
-        require("../assets/image/4.png"),
-        require("../assets/image/5.png"),
-        require("../assets/image/6.png"),
-        require("../assets/image/7.png"),
-        require("../assets/image/8.png"),
-      ],
+      number1:6,
+      artifactImg:{
+        id:0,
+        imageUrl:""
+      }
     };
+  },
+  mounted() {
+    this.pictureChange();
   },
   methods: {
     login() {
       this.$router.push("/login")
+    },
+    pictureChange(){
+      axios.post('http://8.130.122.31:8000/artifact/getRandom/', {
+        number:this.number1,
+      })
+          .then(response => {
+            if (response.status === 200) {
+              const dataList = response.data;
+              const artifactGroups = [];
+
+              dataList.forEach(group => {
+                const artifactImg = {
+                  id:group.id,
+                  imageUrl: group.imageUrl
+                };
+                artifactGroups.push(artifactImg);
+              });
+
+              this.artifactImg = artifactGroups;
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          })
+          .finally(() => {
+            this.loading = false; // 关闭加载状态
+          });
     }
   }
 };
 </script>
 <style>
 .home{
-  height: 600px;
-  widrh:800px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: relative;
   display: block; /* 设置图片为块级元素 */
   margin: auto; /* 设置外边距为自动，实现水平居中 */
