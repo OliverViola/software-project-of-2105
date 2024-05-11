@@ -21,19 +21,19 @@
         },
         created() {
             this.id = this.$route.params.id;
-            this.fetchArtworksDetails();
+            // this.fetchArtworksDetails();
             this.fetchRelatedArtworks();
         },
         methods: {
-            fetchArtworksDetails() {
-                axios.post('http://8.130.122.31:8000/artifact/getRandom/', {id:this.id})
-                    .then(response => {
-                        this.artworkDetails = response.data;
-                    })
-                    .catch(error => {
-                        console.log('Error fetching artwork details:', error);
-                    });
-            },
+            // fetchArtworksDetails() {
+            //     axios.post('http://8.130.122.31:8000/artifact/getRandom/', {id:this.id})
+            //         .then(response => {
+            //             this.artworkDetails = response.data;
+            //         })
+            //         .catch(error => {
+            //             console.log('Error fetching artwork details:', error);
+            //         });
+            // },
 
             fetchRelatedArtworks() {
                 axios.post('http://8.130.122.31:8000/artifact/getRandom/', {number:this.number})
@@ -56,7 +56,7 @@
         <div id = "main" class="flex flex-col relative pb-4">
             <!-- flex布局details and picture -->
             <div class="flex flex-col md:flex-row md:items-start">
-                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-20">
+                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-[89px]">
                         <viewer></viewer>
                     </div>
                 <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0">

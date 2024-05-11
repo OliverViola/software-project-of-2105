@@ -8,7 +8,7 @@ export default {
   },
   methods : {
     goToDetailPage() {
-      this.$router.push({ name: 'DetailsPage', params: {id: this.id}})
+      this.$router.push({ name: 'DetailsPage', params: { id: this.id }});
     }
   }
 }

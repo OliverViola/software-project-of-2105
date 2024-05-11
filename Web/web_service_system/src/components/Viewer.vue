@@ -23,7 +23,7 @@
 <template>
     <div>
         <div class="relative">
-            <div id="openseadragon1" :style="{backgroundColor:'rgb(240, 240, 240)', width: '100%', height: 'calc(-10rem + 100dvh)', position: 'relative'}"></div>
+            <div id="openseadragon1" :style="{backgroundColor:'rgb(240, 240, 240)', width: '100%', height: 'calc(-89px + 100dvh)', position: 'relative'}"></div>
         </div>
         <div class="controller-wrapper px-4 py-6 md:p-6 flex justify-between flex-col md:flex-row gap-4">
             <div class="flex flex-row items-center gap-2 order-2 md:gap-4 md:order-1">
