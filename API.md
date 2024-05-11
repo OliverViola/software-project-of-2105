@@ -40,3 +40,13 @@
 * 返回结果：
     * 文物列表
     * status：200(success) / 400(fail)
+
+### 5. 根据文物的材质和年代进行推荐
+* 地址：<http://8.130.122.31:8000/artifact/recommend>
+* 类型：POST
+* 输入参数：
+    * id：当前文物的id
+    * number：需要的数量
+* 返回结果：
+    * 文物列表
+    * status：200(success) / 400(fail)
