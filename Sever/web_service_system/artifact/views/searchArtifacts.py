@@ -30,7 +30,7 @@ def recommendArtifacts(request):
         print(art_id)
         artifact = Artifact.objects.filter(id=art_id)[0]
         obj_artifacts = Artifact.objects.filter(Q(material__icontains=artifact.material)
-                                                | Q(time__exact=artifact.time)).exclude(id=art_id).values()
+                                                | Q(time__icontains=artifact.time)).exclude(id=art_id).values()
         artifacts = list(obj_artifacts)[:number]
         return Response(data=artifacts, status=status.HTTP_200_OK)
     except Exception as e:
