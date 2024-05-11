@@ -30,18 +30,18 @@
                 <div class="flex justify-between sm:justify-start w-full sm:w-auto gap-2 md:gap-4 sm:w-full md:w-full">
                     <button id="zoom-in" class="button text-xs flex items-center justify-center h-8 px-4 py-1 text-black">
                         放大
-                        <ZoomIn style="width: 1em; height: 1em;" class="inline"/>
+                        <ZoomIn style="width: 1em; height: 1em;" class="inline ml-1"/>
                     </button>
                     <button id="zoom-out" class="button text-xs flex items-center justify-center h-8 px-4 py-1">
                         缩小
-                        <ZoomOut style="width: 1em; height: 1em;" class="inline"/>
+                        <ZoomOut style="width: 1em; height: 1em;" class="inline ml-1"/>
                     </button>
                 </div>
             </div>
             <div class="flex items-center gap-2 md:gap-4 order-1 md:order-2">
                 <button id="expand" class="button text-xs flex items-center justify-center h-8 px-4 py-1">
                     展开
-                    <FullScreen style="width: 1em; height: 1em;"  class="inline"/>
+                    <FullScreen style="width: 1em; height: 1em;"  class="inline ml-1"/>
                 </button>
             </div>
         </div>

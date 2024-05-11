@@ -13,7 +13,7 @@
                 artworkDetails: [],
                 relatedArtworks: [],
                 number: 16,
-                id: '',
+                id: '22078',
                 url: "https://www.sxhm.com/Uploads/Picture/2021/11/11/s618c7eba48d28.png",
                 name: "司母戊鼎",
                 material: "青铜"
@@ -36,13 +36,20 @@
             // },
 
             fetchRelatedArtworks() {
-                axios.post('http://8.130.122.31:8000/artifact/getRandom/', {number:this.number})
+                axios.post('http://8.130.122.31:8000/artifact/recommend/', {number:this.number, id:this.id})
                     .then(response => {
                         this.relatedArtworks = response.data;
                     })
                     .catch(error => {
                         console.log('Error fetching related artifacts:', error);
                     });
+            },
+
+            scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
         }
     }
@@ -132,6 +139,10 @@
                         <h3 class="custom-h3">佛教僧侣的法衣</h3>
                         <div>1643</div>
                         <div class="pt-3">中国 明朝</div>
+                        <div class="mt-8 cursor-pointer" @click="scrollToTop">
+                            回到文物视图
+                            <el-icon><ArrowUpBold /></el-icon>
+                        </div>
                     </div>
                 </div>
                 <div id="see-also-container" class="basis-5/6">
