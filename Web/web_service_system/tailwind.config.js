@@ -3,7 +3,11 @@ module.exports = {
   content: [ "./index.html",
   "./src/**/*.{vue,js,ts,jsx,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      flexBasis: {
+        '7/12': '56.92%',
+      }
+    },
   },
   plugins: [],
 }

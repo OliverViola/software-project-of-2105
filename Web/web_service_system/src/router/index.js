@@ -52,7 +52,7 @@ const routes = [
     meta: { title: 'Register Page' } // 设置页面标题
   },
   {
-    path: '/details',
+    path: '/details/:id',
     name: 'DetailsPage',
     component: () => import("@/views/DetailPage.vue"),
     meta: { title: 'Details Page' }
