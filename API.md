@@ -33,7 +33,7 @@
     * status：200(success) / 400(fail)
   
 ### 4. 模糊搜索文物
-* 地址：<http://8.130.122.31:8000/artifact/search>
+* 地址：<http://8.130.122.31:8000/artifact/search/>
 * 类型：POST
 * 输入参数：
     * prompt：描述
