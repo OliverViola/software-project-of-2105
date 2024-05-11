@@ -88,7 +88,7 @@
                     <div class="navigator pb-4 text-15 leading-[150%]">
                         <el-breadcrumb :separator-icon="ArrowRight">
                             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                            <el-breadcrumb-item :to="{ path: '/firstPage/search' }">搜索</el-breadcrumb-item>
+                            <el-breadcrumb-item :to="{ name: 'Search' }">搜索</el-breadcrumb-item>
                         </el-breadcrumb>
                     </div>
 
@@ -96,15 +96,15 @@
                         <!-- 文物名 -->
                         <h3 class="custom-h3" >{{artwork.name}}</h3>
                         <!-- 文物形成时间 -->
-                        <div :style = "{ fontSize: '16px' }">1643</div>
+                        <!-- <div :style = "{ fontSize: '16px' }">1643</div> -->
                     </div>
                     <div>
                         <div class="grid grid-cols-1 pb-4 gap-2 mt-2">
                             <div class="flex flex-col gap-2 item2-start">
-                                <!-- 作者或文物产生年代 -->
+                                <!-- 文物年代 -->
                                 <h3 class="custom-h3">{{artwork.time}}</h3>
                                 <!-- 作者生平 -->
-                                <div>(1368-1644)</div>
+                                <div>{{ artwork.creator === "无" ? "" : artwork.creator }}</div>
                             </div>
                             <!-- 文物级别 -->
                             <div>{{artwork.level}}</div>
@@ -138,9 +138,10 @@
                         <h3 class="custom-h3">{{artwork.name}}</h3>
                         <div>1643</div>
                         <div class="pt-3">{{artwork.time}}</div>
-                        <div class="mt-7 cursor-pointer" @click="scrollToTop" :style="{fontWeight: '600'}">
+                        <div class="mt-7 cursor-pointer w-fit" @click="scrollToTop" :style="{fontWeight: '600'}">
                             返回文物视图
-                            <el-icon class="ml-2"><ArrowUpBold /></el-icon>
+                            <!-- <el-icon class="ml-2"><ArrowUpBold /></el-icon> -->
+                            <font-awesome-icon :icon="['far', 'circle-up']" class="ml-2" />
                         </div>
                     </div>
                 </div>
