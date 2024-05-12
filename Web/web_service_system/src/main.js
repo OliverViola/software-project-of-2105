@@ -10,9 +10,9 @@ import './tailwindcss/tailwind.css';    //导入tailwind css
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCircleUp } from "@fortawesome/free-regular-svg-icons";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faLink, faCircle, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCircleUp, faLink);
+library.add(faCircleUp, faLink, faCircle, faLocationDot);
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

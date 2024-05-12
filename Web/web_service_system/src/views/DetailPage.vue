@@ -107,7 +107,7 @@
                                 <div>{{ artwork.creator === "无" ? "" : artwork.creator }}</div>
                             </div>
                             <!-- 文物级别 -->
-                            <div>{{artwork.level}}</div>
+                            <div class="level w-fit">{{artwork.level}}</div>
                             <!-- 文物材质 -->
                             <div>{{artwork.material}}</div>
                             <!-- 文物大小 -->
@@ -118,7 +118,10 @@
                             <span>{{artwork.placeOfOrigin}}</span>
                         </div>
                         <div class="py-4 gap-x-2 flex border-b-2 border-t-2 border-black">
-                            <span :style="{fontWeight: 600}">所在博物馆：</span>
+                            <span :style="{fontWeight: 600}">
+                                <font-awesome-icon icon="fa-solid fa-location-dot" style="color: #7f3222;" />
+                                所在博物馆：
+                            </span>
                             <span>{{artwork.museum}}</span>
                             <a :href="artwork.collectionUrl" target="_blank" class="ml-4 text-sm text-slate-500 flex items-center hover:underline">
                                 <font-awesome-icon icon="fa-solid fa-link" class="mr-1" />
@@ -200,6 +203,13 @@ html body {
     margin-bottom: 0;
     font-size: 28px;
     font-weight: 500;
+}
+
+.level {
+    background-color: rgba(127, 50, 34, 0.8);
+    border-radius: 20px;
+    color: white;
+    padding: 1px 8px;
 }
 
 #author-info, #title {

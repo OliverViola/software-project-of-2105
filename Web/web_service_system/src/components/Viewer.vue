@@ -20,6 +20,7 @@
                 prefixUrl: "../assets/openseadragonImages", //插件小图标
                 tileSources : {
                     type: "image",
+                    // url: this.imgUrl
                     url: "https://www.sxhm.com/Uploads/Picture/2021/11/10/s618ba9b14aa6d.png"
                 }
             });
@@ -65,7 +66,7 @@
 
 .button:hover {
     border-color: #b64619d2;
-    background-color: #b64619d2;
+    background-color: #7f3222;
     color: white;
 }
 
