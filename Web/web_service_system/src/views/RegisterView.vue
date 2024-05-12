@@ -1,9 +1,10 @@
 <template>
-  <div style="font-family: Arial, sans-serif; text-align: center">
-    <div style="width: 100%; height: 94vh; overflow: hidden; background-color: aliceblue">
-      <div style="width: 400px; margin: 150px auto;">
-        <el-card>
-          <div style="color: black; font-size: 30px; padding-bottom: 30px">
+  <div class="backpicture">
+<!--  <div style="font-family: Arial, sans-serif; text-align: center">-->
+<!--    <div style="width: 100%; height: 94vh; overflow: hidden; background-color: aliceblue">-->
+<!--      <div style="width: 400px; margin: 150px auto;">-->
+        <el-card class="custom-card1">
+          <div style="color: black; font-size: 30px; padding-bottom: 30px;text-align: center;">
             欢迎注册
           </div>
           <el-form ref="form" :model="form" :rules="rules">
@@ -50,8 +51,9 @@
             </div>
           </el-form>
         </el-card>
-      </div>
-    </div>
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
   </div>
 </template>
 
@@ -102,6 +104,7 @@ export default {
             confirm: this.form.confirm
           })
               .then(response => {
+                console.log(response);
                 if (response.status === 201) {
                   // 注册成功
                   this.$message({
@@ -132,3 +135,29 @@ export default {
   }
 }
 </script>
+<style>
+.backpicture{
+  background-image: url('../assets/image/img.png');
+  background-size: cover; /* 调整背景图片大小以覆盖整个元素 */
+  background-position: center; /* 将背景图片放置在元素中心 */
+  height: 100vh; /* 设置元素高度为视窗高度 */
+  display: flex;
+  justify-content: center; /* 在水平方向上居中内容 */
+  align-items: center; /* 在垂直方向上居中内容 */
+  font-family: Arial, sans-serif;
+
+}
+
+.custom-card1 {
+  position: fixed; /* 固定位置 */
+  top: 26%; /* 距离顶部距离 */
+  right: 35%; /* 距离右侧距离 */
+  width: 30%; /* 卡片宽度 */
+  height: 53%; /* 卡片高度 */
+  background-color: rgba(255, 255, 255, 0.86); /* 设置背景颜色及透明度 */
+  z-index: 9999; /* 设置z-index值，保证在最顶层 */
+  overflow: auto; /* 设置溢出时滚动 */
+  border-radius: 10px
+}
+
+</style>
