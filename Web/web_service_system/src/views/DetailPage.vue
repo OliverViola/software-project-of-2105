@@ -38,6 +38,7 @@
             };
         },
         created() {
+            this.scrollToTop();
             this.artwork.id = this.$route.params.id;
             this.fetchArtworksDetails();
             this.fetchRelatedArtworks();
