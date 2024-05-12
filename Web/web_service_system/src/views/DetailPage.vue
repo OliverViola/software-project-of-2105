@@ -17,7 +17,7 @@
         data() {
             return {
                 artwork: {
-                    id: "16718",
+                    id: "",
                     name: "",
                     time: "",
                     creator: "",
@@ -140,7 +140,7 @@
             <!-- 相似推荐 -->
             <div class="flex flex-row gap-12 px-12">
                 <div class="xsm:hidden md:sticky md:top-20 h-fit pt-12 pb-12 basis-1/6">
-                    <img class="mb-6 h-full w-full max-h-75" :src="artwork.imageUrl">
+                    <img class="mb-6 w-full" :style="{height: '200px', objectFit: 'contain'}" :src="artwork.imageUrl">
                     <div id="artwork-titile-sidebar" class="flex flex-col w-full max-w-[120rem] xl:mx-auto mb-5 md:mb-0">
                         <h3 class="custom-h3">{{artwork.name}}</h3>
                         <div>{{artwork.time}}</div>
