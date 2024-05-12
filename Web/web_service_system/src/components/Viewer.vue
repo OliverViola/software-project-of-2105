@@ -3,7 +3,7 @@
 
     export default {
         props: {
-            picUrl: String
+            imageUrl: String
         },
         mounted() {
             const viewer = OpenSeadragon({
@@ -13,6 +13,7 @@
                 fullPageButton: "expand",
                 showHomeControl: false,
                 showNavigator: true, // 是否显示导航缩略图
+                defaultZoomLevel:0.5, //初始化放大倍率
                 maxZoomLevel: 3,
                 minZoomImageRatio: 0.8,
                 // minScrollDeltaTime: 70,
@@ -20,7 +21,7 @@
                 prefixUrl: "../assets/openseadragonImages", //插件小图标
                 tileSources : {
                     type: "image",
-                    url: this.imgUrl
+                    url: this.imageUrl
                     // url: "https://www.sxhm.com/Uploads/Picture/2021/11/10/s618ba9b14aa6d.png"
                 }
             });

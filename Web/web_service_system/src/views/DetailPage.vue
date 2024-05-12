@@ -7,7 +7,7 @@
     export default {
         components: {
            viewer,
-            card
+            card,
         },
         computed: {
             ArrowRight() {
@@ -82,8 +82,8 @@
         <div id = "main" class="flex flex-col relative pb-4">
             <!-- flex布局details and picture -->
             <div class="flex flex-col md:flex-row md:items-start">
-                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-[70px]">
-                        <viewer :picUrl="artwork.imageUrl"></viewer>
+                    <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-[70px]" v-if="artwork.imageUrl">
+                        <viewer :imageUrl="artwork.imageUrl"></viewer>
                     </div>
                 <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0">
                     <div class="navigator pb-4 text-15 leading-[150%]">
