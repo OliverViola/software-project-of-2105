@@ -120,6 +120,10 @@
                         <div class="py-4 gap-x-2 flex border-b-2 border-t-2 border-black">
                             <span :style="{fontWeight: 600}">所在博物馆：</span>
                             <span>{{artwork.museum}}</span>
+                            <a :href="artwork.collectionUrl" target="_blank" class="ml-4 text-sm text-slate-500 flex items-center hover:underline">
+                                <font-awesome-icon icon="fa-solid fa-link" class="mr-1" />
+                                <span class="align-middle">点此了解</span>
+                            </a>
                         </div>
                         <div class="mt-5 grid gap-2">
                             <h3 class="custom-h3">文物描述</h3>
@@ -136,11 +140,10 @@
                     <img class="mb-6 h-full w-full max-h-75" :src="artwork.imageUrl">
                     <div id="artwork-titile-sidebar" class="flex flex-col w-full max-w-[120rem] xl:mx-auto mb-5 md:mb-0">
                         <h3 class="custom-h3">{{artwork.name}}</h3>
-                        <div>1643</div>
-                        <div class="pt-3">{{artwork.time}}</div>
+                        <div>{{artwork.time}}</div>
+                        <div class="pt-3">{{artwork.level}}</div>
                         <div class="mt-7 cursor-pointer w-fit" @click="scrollToTop" :style="{fontWeight: '600'}">
                             返回文物视图
-                            <!-- <el-icon class="ml-2"><ArrowUpBold /></el-icon> -->
                             <font-awesome-icon :icon="['far', 'circle-up']" class="ml-2" />
                         </div>
                     </div>
