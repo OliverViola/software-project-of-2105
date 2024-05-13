@@ -13,9 +13,9 @@
                 fullPageButton: "expand",
                 showHomeControl: false,
                 showNavigator: true, // 是否显示导航缩略图
-                defaultZoomLevel:0.5, //初始化放大倍率
-                maxZoomLevel: 3,
-                minZoomImageRatio: 0.8,
+                defaultZoomLevel:0.4, //初始化放大倍率
+                maxZoomLevel: 2.8,
+                minZoomImageRatio: 0.3,
                 // minScrollDeltaTime: 70,
                 zoomPerScroll:1.2,
                 prefixUrl: "../assets/openseadragonImages", //插件小图标

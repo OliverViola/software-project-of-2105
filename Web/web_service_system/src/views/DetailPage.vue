@@ -1,5 +1,6 @@
 <script>
     import viewer from "../components/Viewer.vue"
+    import Header from "../components/Header.vue"
     import card from "../components/Card.vue"
     import {ArrowRight} from "@element-plus/icons-vue";
     import axios from 'axios'
@@ -8,6 +9,7 @@
         components: {
            viewer,
             card,
+            Header
         },
         computed: {
             ArrowRight() {
@@ -77,7 +79,7 @@
 <template>
     <div id = "body">
         <div class = "header md:z-[9996] md:sticky md:top-0">
-            <div class="custom-h3">header</div>
+            <Header></Header>
         </div>
         <div id = "main" class="flex flex-col relative pb-4">
             <!-- flex布局details and picture -->
@@ -103,12 +105,12 @@
                         <div class="grid grid-cols-1 pb-4 gap-2 mt-2">
                             <div class="flex flex-col gap-2 item2-start">
                                 <!-- 文物年代 -->
-                                <h3 class="custom-h3">{{artwork.time}}</h3>
+                                <h3 class="custom-h3">{{ artwork.time === "无" ? "时期不详" : artwork.time }}</h3>
                                 <!-- 作者生平 -->
                                 <div>{{ artwork.creator === "无" ? "" : artwork.creator }}</div>
                             </div>
                             <!-- 文物级别 -->
-                            <div class="level w-fit">{{artwork.level}}</div>
+                            <div class="level w-fit">{{ artwork.level === "无" ? "未定级" : artwork.level }}</div>
                             <!-- 文物材质 -->
                             <div>{{artwork.material}}</div>
                             <!-- 文物大小 -->
@@ -132,7 +134,7 @@
                         <div class="mt-5 grid gap-2">
                             <h3 class="custom-h3">文物描述</h3>
                             <p class="leading-7">
-                                {{artwork.description}}
+                                {{ artwork.description === "无" ? "暂无描述" : artwork.description }}
                             </p>
                         </div>
                     </div>
@@ -145,7 +147,7 @@
                     <div id="artwork-titile-sidebar" class="flex flex-col w-full max-w-[120rem] xl:mx-auto mb-5 md:mb-0">
                         <h3 class="custom-h3">{{artwork.name}}</h3>
                         <div>{{artwork.time}}</div>
-                        <div class="pt-3">{{artwork.level}}</div>
+                        <div class="pt-3">{{ artwork.level === "无" ? "未定级" : artwork.level }}</div>
                         <div class="mt-7 cursor-pointer w-fit" @click="scrollToTop" :style="{fontWeight: '600'}">
                             返回文物视图
                             <font-awesome-icon :icon="['far', 'circle-up']" class="ml-2" />
