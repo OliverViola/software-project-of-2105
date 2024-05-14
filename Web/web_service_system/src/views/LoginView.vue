@@ -1,9 +1,7 @@
 <template>
 
-  <div class="backpicture">
-<!--  <div style="font-family: Arial, sans-serif; text-align: center">-->
-<!--    <div style="width: 100%; height: 94vh; overflow: hidden;">-->
-<!--      <div style="width: 400px; margin: 150px auto;">-->
+  <div class="backPicture">
+
     <div class="site">
       <h1 style="position: absolute; top: 5%; left: 3%;color: #d3dce6;font-size: 50px;">欢迎进入海外文物知识系统</h1>
     </div>
@@ -40,9 +38,7 @@
     </el-card>
 
   </div>
-<!--    </div>-->
-<!--  </div>-->
-<!--  </div>-->
+
 </template>
 
 <script>
@@ -125,7 +121,7 @@ export default {
 .font {
   font-family: Arial, sans-serif;
 }
-.backpicture{
+.backPicture{
   background-image: url('../assets/image/img.png');
   background-size: cover; /* 调整背景图片大小以覆盖整个元素 */
   background-position: center; /* 将背景图片放置在元素中心 */
@@ -144,7 +140,7 @@ export default {
   right: 35%; /* 距离右侧距离 */
   width: 30%; /* 卡片宽度 */
   height: 43%; /* 卡片高度 */
-  background-color: rgba(255, 255, 255, 0.86); /* 设置背景颜色及透明度 */
+  background-color: rgba(255, 255, 255, 0.66); /* 设置背景颜色及透明度 */
   z-index: 9999; /* 设置z-index值，保证在最顶层 */
   overflow: auto; /* 设置溢出时滚动 */
   box-shadow: 10px 10px 11px rgba(255, 255, 255, 0.6); /* 添加白色阴影效果 */
