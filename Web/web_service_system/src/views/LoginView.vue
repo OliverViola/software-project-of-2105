@@ -13,10 +13,10 @@
         <el-form-item prop="username">
           <div class="container">
             <el-icon><User /></el-icon>
-            <el-input class="input" v-model="form.username" placeholder="请输入用户名" />
+            <el-input class="input" v-model="form.username" placeholder="请输入用户名" style="margin-left: 5px"/>
           </div>
         </el-form-item>
-        <el-form-item prop="password">
+        <el-form-item prop="password" style="margin-top: 40px">
           <div class="container">
           <el-icon><Lock /></el-icon>
           <el-input
@@ -25,13 +25,14 @@
               autocomplete="off"
               show-password
               placeholder="请输入密码"
+              style="margin-left: 5px;"
           />
           </div>
         </el-form-item>
-        <div style="text-align: center">
-          <el-button type="primary" @click="login" style="width: 100%">登录</el-button>
+        <div style="text-align: center;margin-top: 40px">
+          <el-button type="primary" @click="login" style="width: 50%">登录</el-button>
         </div><br>
-        <p class="tips">
+        <p class="tips" style="margin-left: 10%">
           <router-link to="/Register">还没有账号？立即注册</router-link>
         </p>
       </el-form>
@@ -137,9 +138,9 @@ export default {
 .custom-card {
   position: fixed; /* 固定位置 */
   top: 28%; /* 距离顶部距离 */
-  right: 35%; /* 距离右侧距离 */
-  width: 30%; /* 卡片宽度 */
-  height: 43%; /* 卡片高度 */
+  right: 38%; /* 距离右侧距离 */
+  width: 25%; /* 卡片宽度 */
+  height: 50%; /* 卡片高度 */
   background-color: rgba(255, 255, 255, 0.66); /* 设置背景颜色及透明度 */
   z-index: 9999; /* 设置z-index值，保证在最顶层 */
   overflow: auto; /* 设置溢出时滚动 */
@@ -149,6 +150,8 @@ export default {
 .container {
   display: flex; /* 使用 Flexbox 布局 */
   align-items: center; /* 垂直居中对齐 */
+  width: 80%;
+  margin-left: 10%;
 }
 
 .icon {
