@@ -21,13 +21,16 @@
     <div style="flex: 1" />
   </div>
     <el-card class="box-card">
-      <el-carousel :interval="4000" type="card" height="500px">
+      <el-carousel :interval="4000" type="card" height="600px">
         <el-carousel-item v-for="(item,index) in artifactImg" :key="index">
           <img :src="item.imageUrl" class="home" alt=""/>
         </el-carousel-item>
       </el-carousel>
     </el-card>
-  <h1>登录之后查看更多文物和详细信息</h1>
+  <div style="margin-top: 30px;margin-left: 80px">
+    <h1>登录之后查看更多文物和详细信息,以及体验更多功能。</h1>
+  </div>
+
 </template>
 
 <script>
