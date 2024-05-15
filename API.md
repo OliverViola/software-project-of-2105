@@ -37,6 +37,7 @@
 * 类型：POST
 * 输入参数：
     * prompt：描述
+    * number：数量
 * 返回结果：
     * 文物列表
     * status：200(success) / 400(fail)
