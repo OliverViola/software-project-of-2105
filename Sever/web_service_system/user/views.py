@@ -12,6 +12,20 @@ from .serializers import UserSerializer
 @api_view(["POST"])
 def register(request):
     serializer = UserSerializer(data=request.data)
+
+    username = request.data.get("username")
+    email = request.data.get("email")
+    if CustomUser.objects.filter(username=username).exists():
+        return Response(
+            {"message": "Username already exists"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    if CustomUser.objects.filter(email=email).exists():
+        return Response(
+            {"message": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST
+        )
+
     if serializer.is_valid():
         username = request.data.get("username")
         email = request.data.get("email")
@@ -26,6 +40,7 @@ def register(request):
             return Response(
                 {"message": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST
             )
+
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 

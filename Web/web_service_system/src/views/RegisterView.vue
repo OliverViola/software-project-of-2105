@@ -1,8 +1,6 @@
 <template>
-  <div class="backpicture">
-<!--  <div style="font-family: Arial, sans-serif; text-align: center">-->
-<!--    <div style="width: 100%; height: 94vh; overflow: hidden; background-color: aliceblue">-->
-<!--      <div style="width: 400px; margin: 150px auto;">-->
+  <div class="backPicture">
+
         <el-card class="custom-card1">
           <div style="color: black; font-size: 30px; padding-bottom: 30px;text-align: center;">
             欢迎注册
@@ -51,15 +49,12 @@
             </div>
           </el-form>
         </el-card>
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+
   </div>
 </template>
 
 <script>
 
-//import {ElMessageBox} from "element-plus";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -69,7 +64,7 @@ export default {
       form: {},
       rules: {
         username: [
-          { required: true, message: '请输入电话号码', trigger: 'blur' }
+          { required: true, message: '请输入用户名', trigger: 'blur' }
         ],
        email: [
           { required: true, message: '请输入邮件', trigger: 'blur'}
@@ -113,14 +108,20 @@ export default {
                   });
                   // 可以跳转到登录页面
                   this.$router.push("/login");
-                } else {
-                  // 注册失败
-                  this.$message.error('注册失败，请检查信息！');
                 }
               })
               .catch(error => {
-                console.error('注册请求失败:', error);
-                this.$message.error('注册失败，请稍后重试！');
+                console.error(error); // 记录完整的错误信息
+                if (error.message.includes("Username already exists")) {
+                  // 用户名已存在
+                  this.$message.error('Username already exists.');
+                } else if (error.message.includes("Email already exists")) {
+                  // 电子邮件已存在
+                  this.$message.error('Email already exists.');
+                } else {
+                  // 其他错误
+                  this.$message.error('Registration failed. Please try again later.');
+                }
               })
               .finally(() => {
                 this.loading = false; // 关闭加载状态
@@ -136,7 +137,7 @@ export default {
 }
 </script>
 <style>
-.backpicture{
+.backPicture{
   background-image: url('../assets/image/img.png');
   background-size: cover; /* 调整背景图片大小以覆盖整个元素 */
   background-position: center; /* 将背景图片放置在元素中心 */
