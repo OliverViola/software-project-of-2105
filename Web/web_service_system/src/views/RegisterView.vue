@@ -11,6 +11,8 @@
                   prefix-icon="User"
                   v-model="form.username"
                   placeholder="请输入用户名"
+                  style="width: 80%;margin-left: 10%"
+
               />
             </el-form-item>
             <el-form-item prop="email">
@@ -18,6 +20,7 @@
                   prefix-icon="Lock"
                   v-model="form.email"
                   placeholder="请输入邮箱"
+                  style="width: 80%;margin-left: 10%"
               />
             </el-form-item>
             <el-form-item prop="password">
@@ -28,6 +31,7 @@
                   autocomplete="off"
                   show-password
                   placeholder="请输入密码"
+                  style="width: 80%;margin-left: 10%"
               />
             </el-form-item>
             <el-form-item prop="confirm">
@@ -38,14 +42,15 @@
                   autocomplete="off"
                   show-password
                   placeholder="请再次输入密码"
+                  style="width: 80%;margin-left: 10%"
               />
             </el-form-item>
 
             <div style="text-align: center">
-              <el-button type="primary" @click="register" style="width: 100%">立即注册</el-button>
+              <el-button type="primary" @click="register" style="width: 50%;margin-top: 7%">立即注册</el-button>
             </div>
             <div style="text-align: center; padding-top: 10px">
-              <el-button type="text" @click="goToLogin" style="width: 100%">返回登录</el-button>
+              <el-button type="text" @click="goToLogin" style="width: 50%">返回登录</el-button>
             </div>
           </el-form>
         </el-card>
@@ -151,11 +156,11 @@ export default {
 
 .custom-card1 {
   position: fixed; /* 固定位置 */
-  top: 26%; /* 距离顶部距离 */
-  right: 35%; /* 距离右侧距离 */
-  width: 30%; /* 卡片宽度 */
-  height: 53%; /* 卡片高度 */
-  background-color: rgba(255, 255, 255, 0.86); /* 设置背景颜色及透明度 */
+  top: 24%; /* 距离顶部距离 */
+  right: 38%; /* 距离右侧距离 */
+  width: 25%; /* 卡片宽度 */
+  height: 55%; /* 卡片高度 */
+  background-color: rgba(255, 255, 255, 0.66); /* 设置背景颜色及透明度 */
   z-index: 9999; /* 设置z-index值，保证在最顶层 */
   overflow: auto; /* 设置溢出时滚动 */
   border-radius: 10px
