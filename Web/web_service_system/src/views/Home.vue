@@ -8,12 +8,12 @@
       </el-carousel-item>
     </el-carousel>
   </el-card>
-
-    <div class="flex flex-wrap gap-4" style="margin-top: 50px">
-      <el-card style="width: 600px;margin-left: 150px" shadow="always">
+      <div style="margin-top: 50px;display:flex">
+      <el-card style="width: 45%; margin-left: 12%;" shadow="always">
         <img src="../assets/image/5.jpg" alt="" class="picture" />
       </el-card>
-      <el-card style="width: 600px;height:750px;margin-top: 60px;margin-left: -60px" shadow="hover">
+        <div style="background-color: #3CA8FA; width: 20vw; height: 20vh;margin-left: 15%;margin-top: 30px"></div>
+      <el-card style="width: 38%;height:50%;margin-left: -40%;margin-top: 60px" shadow="hover">
         <div class="mb-5 md:mb-0 flex-col flex" style="margin-top: 30px">
           <!-- 文物名 -->
           <h2 class="custom-h3" >装备</h2>
@@ -45,11 +45,12 @@
         </div>
         </div>
       </el-card>
+
     </div>
-
-    <div class="flex flex-wrap gap-4" style="margin-top: 50px">
-
-      <el-card style="width: 600px;height: 700px;margin-left: 150px;margin-top: 60px" shadow="always">
+    <div  style="margin-top: 50px;display: flex">
+      <div style="background-color: #3CA8FA; width: 20vw; height: 20vh;margin-left: 10%;margin-top: 45%"></div>
+      <el-card style="width: 38%;height: 50%;margin-left: -19%;margin-top: 8%" shadow="always">
+      <div>
         <div class="mb-5 md:mb-0 flex-col flex" style="margin-top: 30px">
           <!-- 文物名 -->
           <h2 class="custom-h3" >清蕉叶纹铜觚</h2>
@@ -78,19 +79,17 @@
             </div>
           </div>
         </div>
+    </div>
       </el-card>
 
-      <el-card style="width: 600px;margin-left: -60px;z-index: 2" shadow="hover">
+      <el-card style="width: 45%;margin-left: -3%" shadow="hover">
         <img src="../assets/image/2.jpg" alt="" class="picture" />
       </el-card>
     </div>
 
-<div style="margin-left: 150px">
-  <h2>馆藏资源</h2>
-  <el-divider />
-</div>
-
-  <div style="margin-left: 150px;margin-right: 130px">
+  <div style="margin-left: 10%;margin-right: 10%;margin-top: 5%">
+    <h2>馆藏资源</h2>
+    <el-divider style="margin-right: 10%"/>
     <div id="card-container" class="mt-4 grid gap-x-4 gap-y-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
       <card v-for="(item, index) in artifact" :key="index" :picUrl="item.imageUrl" :artworkTitle="item.name" :artworkMaterial="item.material" :id="String(item.id)"></card>
     </div>
@@ -246,8 +245,12 @@ export default {
 h2 {
   font-size: 30px; /* 设置字体大小 */
   font-weight: bold; /* 设置字体粗细 */
-  color: #333; /* 设置字体颜色 */
-  /* 可以根据需要添加其他样式，比如字体家族、行高等 */
+  color: #0a0909; /* 设置字体颜色 */
+
+  border: 2px solid #000; /* 添加一个2像素宽度、黑色实线的边框 */
+  padding: 10px; /* 可选：为了让内容与边框之间有一定距离，添加内边距 */
+  width: 300px;
+  border-radius: 20px
 }
 .content{
   text-indent: 2em; /* 首行缩进两个字符 */
@@ -261,4 +264,5 @@ h2 {
   line-height: 2; /* 行间距加大 */
   margin-right: 60px;
 }
+
 </style>
