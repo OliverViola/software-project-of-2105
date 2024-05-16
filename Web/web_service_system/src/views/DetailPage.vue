@@ -1,10 +1,9 @@
 <script>
     import viewer from "../components/Viewer.vue"
-    import Header from "../components/Header.vue"
+    import Header from "../header/Header.vue"
     import card from "../components/Card.vue"
     import {ArrowRight} from "@element-plus/icons-vue";
     import axios from 'axios'
-
     export default {
         components: {
            viewer,

@@ -1,6 +1,5 @@
 <template>
   <!--  轮播图-->
-  <Header></Header>
   <el-card class="box-card">
     <el-carousel :interval="4000" type="card" height="500px">
       <el-carousel-item v-for="(item,index) in artifactImg" :key="index">
