@@ -14,7 +14,7 @@
         海外文物知识系统
       </el-text>
     </div>
-    <el-button @click="toHome" link style="padding-top: 8px;font-weight: 500; font-size: 20px; color: buttonColor; margin-left: 20%" >
+    <el-button @click="toHome" link style="padding-top: 8px;font-weight: 500; font-size: 20px; color: buttonColor; margin-left: 15%" >
       首页
     </el-button>
 
