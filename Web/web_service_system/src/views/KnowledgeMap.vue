@@ -1,8 +1,7 @@
 <template>
-  <Header></Header>
-  <div style="height:100%;" ref="Screen">
-    <div class="left" id="viz1" ref="viz1"></div>
-  </div>
+  <el-card class="box-card">
+
+  </el-card>
 </template>
 
 
