@@ -1,20 +1,85 @@
 <template>
   <Header></Header>
-  <el-card class="box-card">
-
-  </el-card>
+  <div style="height:100%;" ref="Screen">
+    <div class="left" id="viz1" ref="viz1"></div>
+  </div>
 </template>
 
 
-<script>
-// import {getCookie} from "@/utils/cookie";
-// import request from "@/utils/request";
-import Header from "../components/Header.vue"
-export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "KnowledgeMap",
-  components: {
-    Header
-  }
+<script setup>
+import Header from "../components/Header.vue";
+import NeoVis from 'neovis.js';
+import { onMounted } from "vue";
+
+onMounted(() => {
+  draw();
+})
+
+var viz;
+
+function draw() {
+  var config = {
+    container_id: "viz",
+    server_url: "bolt://101.200.145.59:7474",
+    server_user: "neo4j",
+    server_password: "12345678",
+    labels: {
+      "info": {
+        "caption": "name",
+        "font": {
+          "size": 15,
+          "color": "#100000"
+        },
+
+
+      },
+      "relic": {
+        "caption": "name",
+        "font": {
+          "size": 25,
+          "color": "#000000"
+        },
+        "community": "community"
+      },
+
+    },
+    relationships: {
+      "年代": {
+        "thickness": "count",
+        "caption": true
+      },
+      "现藏博物馆": {
+        "thickness": "count",
+        "caption": true
+      },
+      "类型": {
+        "thickness": "count",
+        "caption": true
+      },
+      "藏品原产地": {
+        "thickness": "count",
+        "caption": true
+      },
+      "藏品材质": {
+        "thickness": "count",
+        "caption": true
+      },
+      "藏品等级": {
+        "thickness": "count",
+        "caption": true
+      },
+    },
+    arrows: true,
+    hierarchical: false,
+    initial_cypher: "MATCH p=()-[]->() RETURN p LIMIT 300"
+
+  };
+
+  viz = new NeoVis(config);
+  viz.render();
+  console.log(viz);
+
 }
+
+
 </script>

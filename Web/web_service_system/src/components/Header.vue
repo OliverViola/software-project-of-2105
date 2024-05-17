@@ -6,7 +6,7 @@
         font-family: Arial, sans-serif;
         height: 70px
       ">
-    <div style="padding-top: 15px;margin-left: 1%">
+    <div style="padding-top: 15px;margin-left: 5%">
       <el-icon style="font-size: 40px"><Management /></el-icon>
     </div>
     <div style="padding-top: 10px;margin-left: 0.2%">

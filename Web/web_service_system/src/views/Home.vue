@@ -240,7 +240,7 @@ export default {
 .picture{
   width: 100%; /* 让图片宽度填满其父容器 */
   height: 100%; /* 让图片高度填满其父容器 */
-  //object-fit: cover; /* 让图片保持比例并填充整个容器，可能会裁剪部分图片 */
+  /* object-fit: cover; 让图片保持比例并填充整个容器，可能会裁剪部分图片 */
 }
 h2 {
   font-size: 30px; /* 设置字体大小 */
