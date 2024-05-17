@@ -1,10 +1,10 @@
 <template>
-  <div style="
+  <!-- <div style="
     display: flex;
     background-color: white;
     font-family: Arial, sans-serif;
     height: 70px
-    ">
+    " class="flex-row ">
     <div style="padding-top: 15px;margin-left: 1%">
       <el-icon style="font-size: 40px"><Management /></el-icon>
     </div>
@@ -19,8 +19,44 @@
       </el-button>
     </div>
     <div style="flex: 1" />
-  </div>
+  </div> -->
+  <div>
+    <!-- 添加一个容器包裹导航栏 -->
+    <div class="navbar-wrapper px-6">
+      <el-menu mode="horizontal" :default-active="activeIndex" @select="handle" router style="height:70px;display: flex; justify-content: space-between; align-items: center ">
+        <div class="flex flex-row">
+          <el-icon style="font-size: 65px;"><Management /></el-icon>
+          <el-text style="font-weight: 550; font-size: 35px; color: black;">
+            海外文物知识系统
+          </el-text>
+        </div>
+        <!-- <div class="flex felx-row">
+          <el-menu-item index="/home" style="font-weight: 400; font-size: 20px; color: black;">首页</el-menu-item>
+          <el-menu-item index="/search" style="font-weight: 400; font-size: 20px; color: black;">搜索</el-menu-item>
+          <el-menu-item index="/timeline" style="font-weight: 400; font-size: 20px; color: black;">时间轴</el-menu-item>
+          <el-menu-item index="/knowledgeMap" style="font-weight: 400; font-size: 20px; color: black;">知识图谱</el-menu-item>
+        </div> -->
+        <el-button @click="login" link style="font-weight: 500; font-size: 20px; color: black; " >
+        登录/注册
+      </el-button>
+      </el-menu>
+    </div>
+    <!-- 添加一个空的 div 占位，防止内容被导航栏遮挡 -->
+    <div style="height: 70px;"></div>
+    <router-view></router-view>
+
     <el-card class="box-card">
+      <el-carousel :interval="4000" type="card" height="600px">
+        <el-carousel-item v-for="(item,index) in artifactImg" :key="index">
+          <img :src="item.imageUrl" class="home" alt=""/>
+        </el-carousel-item>
+      </el-carousel>
+    </el-card>
+    <div style="margin-top: 30px;margin-left: 80px">
+      <h1>登录之后查看更多文物和详细信息,以及体验更多功能。</h1>
+    </div>
+  </div>
+    <!-- <el-card class="box-card">
       <el-carousel :interval="4000" type="card" height="600px">
         <el-carousel-item v-for="(item,index) in artifactImg" :key="index">
           <img :src="item.imageUrl" class="home" alt=""/>
@@ -29,7 +65,7 @@
     </el-card>
   <div style="margin-top: 30px;margin-left: 80px">
     <h1>登录之后查看更多文物和详细信息,以及体验更多功能。</h1>
-  </div>
+  </div> -->
 
 </template>
 
@@ -108,6 +144,21 @@ export default {
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
+}
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 确保导航栏在最上层 */
+  background-color: white; /* 可根据需要设置背景色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 可选：添加阴影效果 */
+}
+
+/* 添加样式，使内容不被导航栏遮挡 */
+.router-view {
+  padding-top: 70px; /* 与导航栏高度相同 */
 }
 
 </style>

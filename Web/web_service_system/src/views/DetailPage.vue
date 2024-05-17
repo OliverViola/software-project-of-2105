@@ -80,13 +80,13 @@
         <div class = "header md:z-[9996] md:sticky md:top-0">
             <Header></Header>
         </div>
-        <div id = "main" class="flex flex-col relative pb-4">
+        <div id = "main" class="flex flex-col relative pb-4 pt-[1px]">
             <!-- flex布局details and picture -->
             <div class="flex flex-col md:flex-row md:items-start">
                     <div class="basis-7/12 pb-5 md:pb-0 md:sticky md:top-[70px]" v-if="artwork.imageUrl">
                         <viewer :imageUrl="artwork.imageUrl"></viewer>
                     </div>
-                <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0">
+                <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0 pt-3">
                     <div class="navigator pb-4 text-15 leading-[150%]">
                         <el-breadcrumb :separator-icon="ArrowRight">
                             <el-breadcrumb-item :to="{ name: 'Home' }">首页</el-breadcrumb-item>
