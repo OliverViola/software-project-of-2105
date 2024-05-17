@@ -1,16 +1,21 @@
 <template>
   <div>
     <!-- 添加一个容器包裹导航栏 -->
-    <div class="navbar-wrapper">
-      <el-menu mode="horizontal" :default-active="activeIndex" @select="handle" router style="height:70px;display: flex;justify-content: center;align-items: center ">
-        <el-icon style="font-size: 65px;"><Management /></el-icon>
-        <el-text style="font-weight: 550; font-size: 35px; color: black;">
-          海外文物知识系统</el-text>
-        <el-menu-item index="/home" style="font-weight: 400; font-size: 20px; color: black;">首页</el-menu-item>
-        <el-menu-item index="/search" style="font-weight: 400; font-size: 20px; color: black;">搜索</el-menu-item>
-        <el-menu-item index="/timeline" style="font-weight: 400; font-size: 20px; color: black;">时间轴</el-menu-item>
-        <el-menu-item index="/knowledgeMap" style="font-weight: 400; font-size: 20px; color: black;">知识图谱</el-menu-item>
-        <el-button link @click="logout">退出登录</el-button>
+    <div class="navbar-wrapper px-6">
+      <el-menu mode="horizontal" :default-active="activeIndex" @select="handle" router style="height:70px;display: flex; justify-content: space-between; align-items: center ">
+        <div class="flex flex-row">
+          <el-icon style="font-size: 65px;"><Management /></el-icon>
+          <el-text style="font-weight: 550; font-size: 35px; color: black;">
+            海外文物知识系统
+          </el-text>
+        </div>
+        <div class="flex felx-row">
+          <el-menu-item index="/home" style="font-weight: 400; font-size: 20px; color: black;">首页</el-menu-item>
+          <el-menu-item index="/search" style="font-weight: 400; font-size: 20px; color: black;">搜索</el-menu-item>
+          <el-menu-item index="/timeline" style="font-weight: 400; font-size: 20px; color: black;">时间轴</el-menu-item>
+          <el-menu-item index="/knowledgeMap" style="font-weight: 400; font-size: 20px; color: black;">知识图谱</el-menu-item>
+        </div>
+        <el-button link @click="logout" class="text-lg">退出登录</el-button>
       </el-menu>
     </div>
     <!-- 添加一个空的 div 占位，防止内容被导航栏遮挡 -->
