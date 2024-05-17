@@ -39,15 +39,16 @@ export default {
       console.log(key);
       console.log(keyPath);
     },
-    logout() {
-      this.clearUserSession();
-      this.$router.replace("/firstPage");
-    },
     clearUserSession() {
       // 清除登录相关信息，例如 Token
       localStorage.removeItem("authToken");
       this.$store.commit("setUser", null); // 重置 Vuex 状态
     },
+    logout() {
+      this.clearUserSession();
+      this.$router.replace("/firstPage");
+    },
+
   }
 }
 </script>
