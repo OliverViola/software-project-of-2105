@@ -89,7 +89,7 @@
                 <div class="details-container basis-5/12 px-4 pb-5 md:px-16 md:pb-0">
                     <div class="navigator pb-4 text-15 leading-[150%]">
                         <el-breadcrumb :separator-icon="ArrowRight">
-                            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                            <el-breadcrumb-item :to="{ name: 'Home' }">首页</el-breadcrumb-item>
                             <el-breadcrumb-item :to="{ name: 'Search' }">搜索</el-breadcrumb-item>
                         </el-breadcrumb>
                     </div>
