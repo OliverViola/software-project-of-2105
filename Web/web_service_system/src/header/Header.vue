@@ -14,6 +14,7 @@
           <el-menu-item index="/search" style="font-weight: 400; font-size: 20px; color: black;">搜索</el-menu-item>
           <el-menu-item index="/timeline" style="font-weight: 400; font-size: 20px; color: black;">时间轴</el-menu-item>
           <el-menu-item index="/knowledgeMap" style="font-weight: 400; font-size: 20px; color: black;">知识图谱</el-menu-item>
+          <el-button link @click="goToKnowledge" style="font-weight: 400; font-size: 20px; color: black;">知识问答</el-button>
         </div>
         <el-button link @click="logout" class="text-lg">退出登录</el-button>
       </el-menu>
@@ -48,7 +49,9 @@ export default {
       this.clearUserSession();
       this.$router.replace("/firstPage");
     },
-
+    goToKnowledge() {
+      window.location.href = "http://8.130.122.31:8001/#/";
+    }
   }
 }
 </script>
